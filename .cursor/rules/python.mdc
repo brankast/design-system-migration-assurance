@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+---
+
+---
+description: Python and FastAPI development rules
+globs: apps/api/**/*.py, agents/**/*.py
+---
+
+# Python
+
+Use Python 3.11+.
+
+Use type hints for public functions and important internal structures.
+
+Prefer small functions with a single responsibility.
+
+Use FastAPI for HTTP APIs.
+
+Use Pydantic models for API and agent input/output schemas.
+
+Keep AI/LLM calls isolated behind explicit services or adapters.
+
+Do not put LLM calls directly inside API route handlers.
+
+External integrations should be isolated behind services.
+
+Errors should be explicit and useful for debugging.
+
+Write tests for important business logic.

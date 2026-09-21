@@ -1,0 +1,33 @@
+---
+alwaysApply: true
+---
+
+---
+description: Angular development rules
+globs: apps/web/**/*.ts, apps/web/**/*.html, apps/web/**/*.scss
+---
+
+# Angular
+
+Use modern Angular patterns.
+
+Prefer:
+
+- standalone components
+- inject()
+- signals where appropriate
+- computed() for derived state
+- input() / input.required()
+- output()
+- typed reactive patterns
+- strict TypeScript
+
+Avoid introducing NgModules unless there is a specific reason.
+
+Keep components focused and avoid putting business logic directly into templates.
+
+Prefer services for reusable application logic.
+
+Use Angular Material for the PoC UI unless there is a specific reason not to.
+
+Do not introduce additional frontend libraries without first evaluating whether Angular or Angular Material already provides the required functionality.

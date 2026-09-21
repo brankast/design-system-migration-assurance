@@ -1,0 +1,46 @@
+---
+alwaysApply: true
+---
+
+---
+description: Rules for AI agents and LLM-powered workflows
+globs: agents/**/*.py
+---
+
+# AI Agent Rules
+
+Agents must have a clearly defined responsibility.
+
+Avoid creating a single general-purpose agent.
+
+Each agent should define:
+
+- input
+- output
+- tools
+- constraints
+- failure behavior
+
+Prefer structured outputs over free-form text.
+
+All extracted changes must contain source evidence.
+
+The agent must distinguish:
+
+- documented facts
+- inferred information
+- uncertainty
+
+The agent must never invent:
+
+- migration instructions
+- API behavior
+- source URLs
+- component usage
+- test results
+
+When information is unavailable, explicitly return an uncertainty state.
+
+Prefer tool calls for repository inspection instead of asking an LLM to infer repository state.
+
+Generated code must be treated as a proposal until reviewed by a human.
