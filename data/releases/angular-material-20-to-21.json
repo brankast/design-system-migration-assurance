@@ -1,0 +1,13 @@
+{
+    "id": "material-20-21-form-field-legacy",
+    "library": "Angular Material",
+    "fromVersion": "20",
+    "toVersion": "21",
+    "component": "MatFormField",
+    "changeType": "breaking",
+    "severity": "high",
+    "description": "The legacy form field appearance is no longer supported.",
+    "affectedApi": "appearance=\"legacy\"",
+    "migrationPath": "Replace the legacy appearance with a supported appearance.",
+    "sourceUrl": "https://material.angular.dev/"
+  }

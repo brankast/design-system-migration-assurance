@@ -1,0 +1,31 @@
+.page {
+  display: grid;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.lede,
+.error {
+  max-width: 68ch;
+}
+
+.error {
+  color: var(--mat-sys-error);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font: var(--mat-sys-headline-small);
+}

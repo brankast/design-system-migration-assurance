@@ -1,0 +1,34 @@
+<section class="page">
+  <h1>Documented change events</h1>
+  <p>Only changelog facts and seeded release notes are shown. Nothing here is inferred.</p>
+
+  <table mat-table [dataSource]="assurance.changes()" class="table">
+    <ng-container matColumnDef="component">
+      <th mat-header-cell *matHeaderCellDef>Component</th>
+      <td mat-cell *matCellDef="let row">{{ row.component }}</td>
+    </ng-container>
+    <ng-container matColumnDef="api">
+      <th mat-header-cell *matHeaderCellDef>API</th>
+      <td mat-cell *matCellDef="let row">{{ row.affectedApi }}</td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let row">{{ row.changeType }}</td>
+    </ng-container>
+    <ng-container matColumnDef="severity">
+      <th mat-header-cell *matHeaderCellDef>Severity</th>
+      <td mat-cell *matCellDef="let row">
+        <mat-chip-set>
+          <mat-chip>{{ row.severity }}</mat-chip>
+        </mat-chip-set>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="toVersion">
+      <th mat-header-cell *matHeaderCellDef>In version</th>
+      <td mat-cell *matCellDef="let row">{{ row.toVersion }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+</section>

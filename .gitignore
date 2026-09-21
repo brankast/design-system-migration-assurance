@@ -27,3 +27,7 @@ coverage/
 
 # Local data
 data/local/
+data/releases/angular-components-CHANGELOG.md
+data/assessments/*.json
+data/assessments/*.md
+data/state/*.json

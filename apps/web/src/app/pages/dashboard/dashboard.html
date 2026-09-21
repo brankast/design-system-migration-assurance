@@ -1,0 +1,62 @@
+<section class="page">
+  <header class="header">
+    <div>
+      <h1>Angular Material changelog watch</h1>
+      <p class="lede">
+        The tracker reads the official Angular Components changelog, matches
+        documented breaking APIs against this repo, and opens a draft PR only
+        when source usages need a human-reviewed change.
+      </p>
+    </div>
+    <button
+      mat-flat-button
+      type="button"
+      (click)="assurance.runScan()"
+      [disabled]="assurance.scanning()"
+    >
+      @if (assurance.scanning()) {
+        Scanning…
+      } @else {
+        Run changelog scan
+      }
+    </button>
+  </header>
+
+  @if (assurance.error()) {
+    <p class="error">{{ assurance.error() }}</p>
+  }
+
+  @if (assurance.loading()) {
+    <mat-spinner diameter="36" />
+  } @else if (assurance.assessment(); as assessment) {
+    <div class="stats">
+      <mat-card>
+        <mat-card-title>Installed</mat-card-title>
+        <mat-card-content>{{ assessment.installedVersion }}</mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>Changelog latest</mat-card-title>
+        <mat-card-content>{{ assessment.latestVersion }}</mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>Documented changes</mat-card-title>
+        <mat-card-content>{{ assessment.changeEvents.length }}</mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-title>Affected usages</mat-card-title>
+        <mat-card-content>{{ affectedCount() }}</mat-card-content>
+      </mat-card>
+    </div>
+
+    <mat-card>
+      <mat-card-title>Latest assessment</mat-card-title>
+      <mat-card-content>
+        <p>{{ assessment.summary }}</p>
+        <p>
+          Range {{ assessment.fromVersion }} → {{ assessment.toVersion }}.
+          Draft PR needed: {{ assessment.prRequired ? 'yes' : 'no' }}.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  }
+</section>

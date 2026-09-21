@@ -1,0 +1,22 @@
+<section class="page">
+  <h1>Consumer checkout</h1>
+  <p>
+    This screen uses current Angular Material APIs. The outdated copy that the
+    scanner is meant to catch lives in
+    <code>data/projects/demo-consumer</code>.
+  </p>
+
+  <form class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="email" name="email" />
+    </mat-form-field>
+
+    <mat-selection-list [(ngModel)]="shipping" name="shipping">
+      <mat-list-option value="standard" togglePosition="before">Standard shipping</mat-list-option>
+      <mat-list-option value="express" togglePosition="before">Express shipping</mat-list-option>
+    </mat-selection-list>
+
+    <button mat-flat-button type="button">Continue</button>
+  </form>
+</section>

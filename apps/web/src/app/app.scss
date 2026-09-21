@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.shell {
+  height: 100%;
+}
+
+.nav {
+  width: 260px;
+}
+
+.brand {
+  padding: 20px 16px 8px;
+  font: var(--mat-sys-title-medium);
+}
+
+.content {
+  padding: 24px;
+  max-width: 1120px;
+}
+
+a.active {
+  background: var(--mat-sys-secondary-container);
+}
